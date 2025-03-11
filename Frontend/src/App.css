@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Professional font */
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+main .left:hover,
+main .right:hover {
+  transform: scale(1.02);
+}
+
+main .left {
+  background-color: #1e1e1e; /* Darker background for code area */
+  position: relative;
+  overflow: hidden;
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: #282c34; /* Slightly lighter code background */
+  color: #abb2bf; /* Light text color for code */
+  font-size: 1rem;
+  padding: 1rem;
+  overflow: auto;
+  font-family: 'Fira Code', monospace; /* Monospace font for code */
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #ffffff; /* Professional green */
+  color: #000000; /* White text */
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+main .left .review:hover {
+  background-color: #45a0e6; /* Hover effect */
+  transform: scale(1.05);
+}
+
+main .right {
+  background-color: #1e1e1e; /* Dark background for text area */
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  overflow: auto;
+  color: #e0e0e0; /* Light text color */
+}
+
+main .right h1,
+main .right h2,
+main .right h3 {
+  color: #ffffff; /* White headers */
+  margin-bottom: 0.5rem;
+}
+
+main .right p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+main .right a {
+  color: #61dafb; /* Light blue links */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+main .right a:hover {
+  text-decoration: underline;
+}
