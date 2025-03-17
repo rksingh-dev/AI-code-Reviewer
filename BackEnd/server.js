@@ -22,13 +22,12 @@ app.get('/api', (req, res) => {
   res.status(200).send('API is running')
 })
 
-// For local development
+// IMPORTANT: Use the PORT environment variable provided by Render
 const PORT = process.env.PORT || 3000
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
-  })
-}
 
-// Export for Vercel serverless functions
-module.exports = app
+// Make sure this line is not inside any conditional blocks
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server listening on port ${PORT}`)
+})
+
+// No need to export the app since Render runs it as a service
