@@ -1,26 +1,28 @@
 const express = require('express');
-const aiRoutes = require('./routes/ai.routes');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 
-// CORS configuration for Render
+// Simpler CORS configuration for debugging
 app.use(cors({
-  // In production, specify your frontend URL
-  origin: process.env.FRONTEND_URL || '*',
-  methods: ['GET', 'POST'],
-  credentials: true
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
+// Other middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Mount routes with the correct prefix
+// Import routes
+const aiRoutes = require('./routes/ai.routes');
+
+// Mount routes
 app.use('/ai', aiRoutes);
 
-// Health check route
-app.get('/health', (req, res) => {
+// Add a root route for health check
+app.get('/', (req, res) => {
   res.status(200).send('API is running');
 });
 
+// Export the app
 module.exports = app;
