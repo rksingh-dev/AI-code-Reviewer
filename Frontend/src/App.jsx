@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   async function reviewCode() {
-    const backendUrl = process.env.REACT_APP_API_URL || 'https://your-backend-name.onrender.com';
+    const backendUrl = process.env.REACT_APP_API_URL || 'https://ai-code-reviewer-xdxe.onrender.com';
     const response = await axios.post(`${backendUrl}/ai/get-review`, { code });
     setReview(response.data);
   }
