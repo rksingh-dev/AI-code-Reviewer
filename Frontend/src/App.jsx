@@ -21,9 +21,15 @@ function App() {
   }, [])
 
   async function reviewCode() {
-    const backendUrl = process.env.REACT_APP_API_URL || 'https://ai-code-reviewer-xdxe.onrender.com';
-    const response = await axios.post(`${backendUrl}/ai/get-review`, { code });
-    setReview(response.data);
+    const backendUrl = 'https://ai-code-reviewer-xdxe.onrender.com';
+    
+    try {
+      const response = await axios.post(`${backendUrl}/ai/get-review`, { code });
+      setReview(response.data);
+    } catch (error) {
+      console.error('Error calling API:', error);
+      setReview('Error: Could not get code review. Please try again.');
+    }
   }
 
   return (
