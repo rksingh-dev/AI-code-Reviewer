@@ -1,9 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
-
-// Import your app if you have a separate app.js, or set up everything here
-const app = express()
+const app = require('./src/app')
 
 // CORS configuration
 app.use(cors({
@@ -32,5 +30,5 @@ if (process.env.NODE_ENV !== 'production') {
   })
 }
 
-// Export for Vercel
+// Export for Vercel serverless functions
 module.exports = app
