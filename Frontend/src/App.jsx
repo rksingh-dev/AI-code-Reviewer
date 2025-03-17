@@ -21,11 +21,8 @@ function App() {
   }, [])
 
   async function reviewCode() {
-    const apiUrl = process.env.NODE_ENV === 'production' 
-      ? '/api/ai/get-review'
-      : 'http://localhost:3000/ai/get-review';
-    
-    const response = await axios.post(apiUrl, { code });
+    const backendUrl = process.env.REACT_APP_API_URL || 'https://your-backend-name.onrender.com';
+    const response = await axios.post(`${backendUrl}/ai/get-review`, { code });
     setReview(response.data);
   }
 
