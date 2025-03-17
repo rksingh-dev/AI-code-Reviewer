@@ -1,8 +1,8 @@
 const express = require('express');
-const aiRoutes = require('./routes/ai.routes')
-const cors = require('cors')
+const aiRoutes = require('./routes/ai.routes');
+const cors = require('cors');
 
-const app = express()
+const app = express();
 
 // Update CORS configuration for production
 const corsOptions = {
@@ -13,13 +13,15 @@ const corsOptions = {
   credentials: true
 };
 
-app.use(cors(corsOptions))
-app.use(express.json())
+app.use(cors(corsOptions));
+app.use(express.json());
 
+// Mount routes
+app.use('/ai', aiRoutes);
+
+// Add a health check route
 app.get('/', (req, res) => {
-    res.send('Hello World')
-})
+  res.send('API is running');
+});
 
-app.use('/ai', aiRoutes)
-
-module.exports = app
+module.exports = app;
