@@ -25,10 +25,10 @@ function App() {
     
     try {
       const response = await axios.post(`${backendUrl}/ai/get-review`, { code });
-      setReview(response.data);
+      setReview(response.data.review || response.data);
     } catch (error) {
-      console.error('Error calling API:', error);
-      setReview('Error: Could not get code review. Please try again.');
+      console.error('Error:', error);
+      setReview('Error getting review. Please try again.');
     }
   }
 
