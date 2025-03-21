@@ -14,7 +14,7 @@ A sleek, dark-themed web application that provides AI-powered code reviews. Simp
 
 ## Demo
 
-Try the live demo: [AI Code Reviewer](https://ai-code-reviewer-xdxe.onrender.com)
+Try the live demo: [AI Code Reviewer]([https://ai-code-reviewer-xdxe.onrender.com](https://rksingh-dev.github.io/code-review/))
 
 ## How It Works
 
