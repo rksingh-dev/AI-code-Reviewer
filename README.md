@@ -34,6 +34,3 @@ The application connects to a backend API that processes your code and returns d
   - Error handling and connection testing
   - Multiple payload formats for robustness
   - Advanced message formatting
-
-
-Created with ❤️ by [Your Name]
